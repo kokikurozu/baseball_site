@@ -1,25 +1,54 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="card">
-    <h2>指標一覧 (Index)</h2>
-    <p>詳細を見たい指標をクリックしてください。</p>
+
+<div class="card" style="margin-bottom: 2rem; border-left: 8px solid #004d40;">
+    <h2 style="color: #004d40; margin-top: 0;">「感覚」の野球から、「科学」の野球へ。</h2>
     
-    <div style="margin-top: 20px;">
-        <h3>攻撃</h3>
-        <a href="/ops" class="btn">OPS</a>
-        <a href="/woba" class="btn">wOBA</a>
-        <a href="/iso" class="btn">ISO</a>
-        <a href="/babip" class="btn">BABIP</a>
+    <p style="font-size: 1.1rem; line-height: 1.8;">
+        ようこそ、<strong>Sabermetrics Lab</strong> へ。<br>
+        このサイトは、野球のデータを統計学的見地から分析する手法「セイバーメトリクス」の辞書サイトです。
+    </p>
 
-        <h3>投手</h3>
-        <a href="/whip" class="btn">WHIP</a>
-        <a href="/fip" class="btn">FIP</a>
-        <a href="/kbb" class="btn">K/BB</a>
+    <div style="background-color: #f1f8e9; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.1rem;">📌 このサイトの目的</h3>
+        <p style="margin-bottom: 0;">
+            「WARってよく聞くけど何？」<br>
+            「出塁率と打率、どっちが大事？」<br>
+            <br>
+            そんな疑問を解消し、<strong>もっと深くプロ野球観戦を楽しむための知識</strong>を提供することを目指しています。<br>
+            難しい数式はできるだけ噛み砕き、直感的に理解できるように解説しています。
+        </p>
+    </div>
+</div>
 
-        <h3>総合・守備</h3>
-        <a href="/war" class="btn">WAR</a>
-        <a href="/uzr" class="btn">UZR</a>
+<div class="card">
+    <h2 style="border-bottom: 2px solid #eee; padding-bottom: 10px;">指標一覧 (Index)</h2>
+    <p>知りたい指標をクリックしてください。</p>
+    
+    <div style="margin-top: 25px;">
+        
+        <h3 style="font-size: 1rem; color: #666; margin-bottom: 10px;">■ 攻撃の指標</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <a href="/ops" class="btn">OPS</a>
+            <a href="/woba" class="btn">wOBA</a>
+            <a href="/iso" class="btn">ISO</a>
+            <a href="/babip" class="btn">BABIP</a>
+        </div>
+
+        <h3 style="font-size: 1rem; color: #666; margin-bottom: 10px;">■ 投手の指標</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <a href="/whip" class="btn">WHIP</a>
+            <a href="/fip" class="btn">FIP</a>
+            <a href="/kbb" class="btn">K/BB</a>
+        </div>
+
+        <h3 style="font-size: 1rem; color: #666; margin-bottom: 10px;">■ 総合・守備</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <a href="/war" class="btn">WAR</a>
+            <a href="/uzr" class="btn">UZR</a>
+        </div>
+
     </div>
 </div>
 {% endblock %}
