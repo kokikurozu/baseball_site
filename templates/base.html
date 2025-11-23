@@ -5,29 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabermetrics Lab</title>
     <style>
-        body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-        header { background: #004d40; color: white; padding: 1rem; text-align: center; }
-        header a { color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        /* --- 基本設定 --- */
+        body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
         
-        /* 共通のカードデザイン */
-        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        /* ロゴがあるヘッダー */
+        header { background: #004d40; color: white; padding: 1.5rem; text-align: center; }
+        header a { color: white; text-decoration: none; font-size: 1.8rem; font-weight: bold; }
+
+        /* ▼▼▼ 今回追加した横並びメニューバー ▼▼▼ */
+        .menu-bar {
+            background-color: #00695c; /* ヘッダーより少し明るい緑（または画像のような青なら #0091ea） */
+            display: flex;             /* これが横並びにする魔法 */
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-bar a {
+            flex: 1;                   /* 全員同じ幅になる */
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 15px 0;
+            font-weight: bold;
+            border-right: 1px solid rgba(255,255,255,0.3); /* 右側の区切り線 */
+            transition: background 0.3s;
+        }
+
+        .menu-bar a:last-child {
+            border-right: none;        /* 最後のボタンだけ線なし */
+        }
+
+        .menu-bar a:hover {
+            background-color: #00897b; /* マウスを乗せたときの色 */
+        }
+        /* ▲▲▲ 追加ここまで ▲▲▲ */
+
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        
+        /* 共通カードデザイン */
+        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        
+        /* ボタン等のデザイン */
         .btn { display: inline-block; background: #e0f2f1; color: #004d40; padding: 10px 20px; 
                text-decoration: none; border-radius: 20px; font-weight: bold; margin: 5px; transition: 0.3s; }
         .btn:hover { background: #004d40; color: white; }
-        
-        /* 詳細ページ用 */
         .formula { background: #eee; padding: 1rem; border-left: 5px solid #d81b60; font-family: monospace; margin: 1rem 0; }
         .back-link { display: inline-block; margin-top: 2rem; color: #666; text-decoration: none; }
+
+        /* スマホ対応：画面が狭いときは縦並びにする設定 */
+        @media (max-width: 600px) {
+            .menu-bar { flex-wrap: wrap; }
+            .menu-bar a { flex: 1 1 50%; border-bottom: 1px solid rgba(255,255,255,0.1); } /* 2列にする */
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <a href="{{ url_for('index') }}">Sabermetrics Lab</a>
+        <a href="/">Sabermetrics Lab</a>
     </header>
+
+    <nav class="menu-bar">
+        <a href="/">トップ</a>
+        <a href="/theory">戦術論</a>
+        <a href="/history">歴史</a>
+        <a href="/data">データ集</a>
+        <a href="/about">サイト概要</a>
+    </nav>
 
     <div class="container">
         {% block content %}{% endblock %}
     </div>
+
 </body>
 </html>
