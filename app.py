@@ -16,7 +16,7 @@ def show_page(page_name):
     try:
         return render_template(f'{page_name}.html')
     except TemplateNotFound:
-        # ファイルが見つからない場合は404エラー
+        # ファイルが見つからない場合は404エラーとする
         abort(404)
 
 if __name__ == '__main__':
