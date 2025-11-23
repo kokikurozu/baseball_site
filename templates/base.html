@@ -5,58 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabermetrics Lab</title>
     <style>
-        /* --- 基本設定 --- */
-        body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-        
-        /* ロゴがあるヘッダー */
-        header { background: #004d40; color: white; padding: 1.5rem; text-align: center; }
-        header a { color: white; text-decoration: none; font-size: 1.8rem; font-weight: bold; }
+        /* --- 1. 基本設定 --- */
+        body { 
+            font-family: "Helvetica Neue", Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: #f4f4f4; /* 背景を少しグレーに（画像に近づける） */
+            color: #333; 
+        }
 
-        /* ▼▼▼ 今回追加した横並びメニューバー ▼▼▼ */
+        /* --- 2. ヘッダー --- */
+        header { 
+            background: #004d40; 
+            color: white; 
+            padding: 1.5rem; 
+            text-align: center; 
+        }
+        header a { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.8rem; 
+            font-weight: bold; 
+        }
+
+        /* --- 3. メニューバー --- */
         .menu-bar {
-            background-color: #00695c; /* ヘッダーより少し明るい緑（または画像のような青なら #0091ea） */
-            display: flex;             /* これが横並びにする魔法 */
+            background-color: #00695c;
+            display: flex;
             padding: 0;
             margin: 0;
         }
-
         .menu-bar a {
-            flex: 1;                   /* 全員同じ幅になる */
+            flex: 1;
             display: block;
             color: white;
             text-decoration: none;
             text-align: center;
             padding: 15px 0;
             font-weight: bold;
-            border-right: 1px solid rgba(255,255,255,0.3); /* 右側の区切り線 */
+            border-right: 1px solid rgba(255,255,255,0.3);
             transition: background 0.3s;
         }
+        .menu-bar a:last-child { border-right: none; }
+        .menu-bar a:hover { background-color: #00897b; }
 
-        .menu-bar a:last-child {
-            border-right: none;        /* 最後のボタンだけ線なし */
+        /* --- 4. パンくずリスト（画像の上部にあるナビ） --- */
+        .breadcrumb {
+            max-width: 900px;
+            margin: 1rem auto 0;
+            padding: 0 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #004d40;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* --- 5. コンテンツエリア --- */
+        .container { 
+            max-width: 900px; 
+            margin: 1rem auto 3rem; 
+            padding: 0 1rem; 
+        }
+        
+        /* カードデザイン（白背景の箱） */
+        .card { 
+            background: white; 
+            padding: 2.5rem; /* 余白を少し広げました */
+            border-radius: 4px; /* 丸みを少し減らして教科書っぽく */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            margin-bottom: 2rem; 
+            line-height: 1.8; /* 文章を読みやすく */
         }
 
-        .menu-bar a:hover {
-            background-color: #00897b; /* マウスを乗せたときの色 */
+        /* ▼▼▼ ここがリクエストの色味設定です！ ▼▼▼ */
+
+        /* h2: ページの大見出し（エンジ色の左太線） */
+        .card h2 {
+            border-left: 10px solid #880e4f; /* 画像のエンジ色 */
+            padding-left: 15px;
+            color: #333;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            font-weight: bold;
         }
-        /* ▲▲▲ 追加ここまで ▲▲▲ */
 
-        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        
-        /* 共通カードデザイン */
-        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 2rem; }
-        
-        /* ボタン等のデザイン */
-        .btn { display: inline-block; background: #e0f2f1; color: #004d40; padding: 10px 20px; 
-               text-decoration: none; border-radius: 20px; font-weight: bold; margin: 5px; transition: 0.3s; }
-        .btn:hover { background: #004d40; color: white; }
-        .formula { background: #eee; padding: 1rem; border-left: 5px solid #d81b60; font-family: monospace; margin: 1rem 0; }
-        .back-link { display: inline-block; margin-top: 2rem; color: #666; text-decoration: none; }
+        /* h3: 小見出し（オレンジ文字＋点線） */
+        .card h3 {
+            color: #e65100; /* 画像のオレンジ色 */
+            border-bottom: 2px dashed #ffcc80; /* 点線の下線 */
+            padding-bottom: 5px;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
 
-        /* スマホ対応：画面が狭いときは縦並びにする設定 */
+        /* strong: 強調文字（赤文字にする） */
+        .card strong {
+            color: #c62828; /* 赤色で強調 */
+            background: linear-gradient(transparent 70%, #ffcdd2 70%); /* おまけ：薄い蛍光ペン風 */
+        }
+
+        /* リンクのデザイン */
+        .card a { color: #1565c0; text-decoration: none; }
+        .card a:hover { text-decoration: underline; }
+
+        /* その他の装飾パーツ */
+        .formula { 
+            background: #fce4ec; /* 薄いピンク背景 */
+            padding: 1rem; 
+            border: 1px solid #f48fb1; 
+            font-family: monospace; 
+            margin: 1.5rem 0; 
+            font-weight: bold;
+            color: #880e4f;
+        }
+        
+        .back-link { 
+            display: inline-block; 
+            margin-top: 2rem; 
+            color: #666 !important; /* 強制的にグレー */
+            border: 1px solid #ccc;
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+
+        /* スマホ対応 */
         @media (max-width: 600px) {
             .menu-bar { flex-wrap: wrap; }
-            .menu-bar a { flex: 1 1 50%; border-bottom: 1px solid rgba(255,255,255,0.1); } /* 2列にする */
+            .menu-bar a { flex: 1 1 50%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .card { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -73,6 +154,10 @@
         <a href="/data">データ集</a>
         <a href="/about">サイト概要</a>
     </nav>
+
+    <div class="breadcrumb">
+        Top &gt; コンテンツ
+    </div>
 
     <div class="container">
         {% block content %}{% endblock %}

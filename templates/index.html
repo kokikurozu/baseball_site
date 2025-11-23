@@ -1,63 +1,125 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-
-<div style="text-align: center; margin: 2rem 0;">
-    <a href="/theory" class="btn" style="background-color: #004d40; color: white; padding: 15px 30px;">
-        📖 セイバーメトリクス戦術論を読む
-    </a>
-</div>
-
-<div class="card" style="margin-bottom: 2rem; border-left: 8px solid #004d40;">
-    <h2 style="color: #004d40; margin-top: 0;">「感覚」の野球から、「科学」の野球へ。</h2>
+<style>
+    /* ▼▼▼ このページ専用の「教科書風」デザイン ▼▼▼ */
     
-    <p style="font-size: 1.1rem; line-height: 1.8;">
-        ようこそ、<strong>Sabermetrics Lab</strong> へ。<br>
-        このサイトは、野球のデータを統計学的見地から分析する手法「セイバーメトリクス」の辞書サイトです。
-    </p>
+    /* 大見出し（第1章など）：左側に太い線 */
+    .chapter-title {
+        border-left: 10px solid #880e4f; /* 画像のようなエンジ色（アクセント） */
+        background-color: #fce4ec;       /* 薄いピンクの背景 */
+        padding: 10px 15px;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #333;
+    }
 
-    <div style="background-color: #f1f8e9; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-        <h3 style="margin-top: 0; font-size: 1.1rem;">📌 このサイトの目的</h3>
-        <p style="margin-bottom: 0;">
-            「WARってよく聞くけど何？」<br>
-            「出塁率と打率、どっちが大事？」<br>
-            <br>
-            そんな疑問を解消し、<strong>もっと深くプロ野球観戦を楽しむための知識</strong>を提供することを目指しています。<br>
-            難しい数式はできるだけ噛み砕き、直感的に理解できるように解説しています。
-        </p>
-    </div>
-</div>
+    /* 小見出し（1.1節など）：下に点線 */
+    .section-title {
+        color: #e65100; /* 画像のようなオレンジ色 */
+        border-bottom: 2px dashed #ffcc80;
+        padding-bottom: 5px;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
 
+    /* セクションの説明文 */
+    .section-desc {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
 
+    /* リンクのリストを2列にする魔法 */
+    .link-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 1:1 で2列にする */
+        gap: 10px 30px; /* 縦横の隙間 */
+        margin-left: 20px;
+    }
+
+    /* リンクのデザイン */
+    .text-link {
+        color: #1565c0; /* 青色リンク */
+        text-decoration: none;
+        font-size: 1rem;
+        display: block; /* クリックしやすく */
+        padding: 2px 0;
+    }
+
+    .text-link:hover {
+        text-decoration: underline;
+        color: #0d47a1;
+    }
+
+    /* スマホで見るときは1列に戻す */
+    @media (max-width: 600px) {
+        .link-grid { grid-template-columns: 1fr; }
+    }
+</style>
 
 <div class="card">
-    <h2 style="border-bottom: 2px solid #eee; padding-bottom: 10px;">指標一覧 (Index)</h2>
-    <p>知りたい指標をクリックしてください。</p>
     
-    <div style="margin-top: 25px;">
-        
-        <h3 style="font-size: 1rem; color: #666; margin-bottom: 10px;">■ 攻撃の指標</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-            <a href="/ops" class="btn">OPS</a>
-            <a href="/woba" class="btn">wOBA</a>
-            <a href="/iso" class="btn">ISO</a>
-            <a href="/babip" class="btn">BABIP</a>
+<h2 class="chapter-title">序章　セイバーメトリクス概論</h2>
+    
+<div class="link-grid">
+            <a href="/introduction" class="text-link" style="color: #d32f2f; font-weight: bold;">
+                0. このサイトの目的 必ず最初に読もう！
+            </a>
+            <a href="/tactics_overview" class="text-link">1. 野球戦術の概要</a>
+            <a href="/redefinition" class="text-link">2. 野球というスポーツの再定義</a>
+            <a href="/about" class="text-link">3. このサイトの目的</a>
         </div>
 
-        <h3 style="font-size: 1rem; color: #666; margin-bottom: 10px;">■ 投手の指標</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-            <a href="/whip" class="btn">WHIP</a>
-            <a href="/fip" class="btn">FIP</a>
-            <a href="/kbb" class="btn">K/BB</a>
-        </div>
 
-        <h3 style="font-size: 1rem; color: #666; margin-bottom: 10px;">■ 総合・守備</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-            <a href="/war" class="btn">WAR</a>
-            <a href="/uzr" class="btn">UZR</a>
+    <h2 class="chapter-title">第1章　攻撃評価論</h2>
+    
+    <div style="padding-left: 10px;">
+        <div class="section-title">1.1節　基本指標と得点能力</div>
+        <p class="section-desc">
+            打率や打点といった旧来の指標に代わる、得点相関の高い指標群について。
+        </p>
+        <div class="link-grid">
+            <a href="/ops" class="text-link">5. OPS (出塁率+長打率)</a>
+            <a href="/woba" class="text-link">6. wOBA (加重出塁率)</a>
+            <a href="/iso" class="text-link">7. ISO (純粋長打率)</a>
+            <a href="/babip" class="text-link">8. BABIP (インプレー打率)</a>
         </div>
-
     </div>
+
+
+    <h2 class="chapter-title">第2章　投手評価論</h2>
+
+    <div style="padding-left: 10px;">
+        <div class="section-title">2.1節　投球の支配力と安定感</div>
+        <p class="section-desc">
+            「勝利数」や「防御率」では測れない、投手個人の純粋な能力を評価する技術。
+        </p>
+        <div class="link-grid">
+            <a href="/whip" class="text-link">9. WHIP (投球安定感)</a>
+            <a href="/fip" class="text-link">10. FIP (守備無関係投球)</a>
+            <a href="/kbb" class="text-link">11. K/BB (制球力と奪三振)</a>
+        </div>
+    </div>
+
+
+    <h2 class="chapter-title">第3章　総合・守備評価論</h2>
+
+    <div style="padding-left: 10px;">
+        <div class="section-title">3.1節　勝利への貢献度</div>
+        <p class="section-desc">
+            守備指標および、攻守全てを統合した究極の指標について。
+        </p>
+        <div class="link-grid">
+            <a href="/uzr" class="text-link">12. UZR (守備指標)</a>
+            <a href="/war" class="text-link">13. WAR (総合勝利貢献度)</a>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
