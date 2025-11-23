@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40;">ISO</h2>
+    <small>Isolated Power</small>
+
+    <div class="formula">
+        計算式：長打率 - 打率
+    </div>
+
+    <p>
+        打者の純粋な「長打力」を測る指標です。<br>
+        打率が高いだけのアベレージヒッターか、本当にパワーがあるスラッガーかを見分けることができます。
+    </p>
+
+    <div style="background: #fff3e0; padding: 1rem; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            <li>.140：平均</li>
+            <li>.200：優秀</li>
+            <li>.250以上：強打者（スラッガー）</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}

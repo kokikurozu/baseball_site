@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40;">BABIP</h2>
+    <small>Batting Average on Balls In Play</small>
+
+    <div class="formula">
+        計算式：(安打-本塁打) ÷ (打数-三振-本塁打+犠飛)
+    </div>
+
+    <p>
+        「フィールド内に飛んだ打球がヒットになった確率」です。<br>
+        投手の場合、この数値は運や味方の守備力に大きく左右されます。極端に数値が高い・低い場合は、次年度に成績が揺り戻す可能性が高いと予測できます。
+    </p>
+
+    <div style="background: #fff3e0; padding: 1rem; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            <li>.300前後：基準値（運も実力も平凡）</li>
+            <li>極端に高い：運が良い可能性あり</li>
+            <li>極端に低い：運が悪い可能性あり</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}

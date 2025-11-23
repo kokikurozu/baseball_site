@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40;">wOBA</h2>
+    <small>Weighted On-Base Average</small>
+
+    <div class="formula">
+        計算式：(0.69×四球 + 0.72×死球 + 0.89×単打 + 1.27×二塁打 + 1.62×三塁打 + 2.10×本塁打) ÷ 打席
+    </div>
+
+    <p>
+        OPSの進化版とも言える指標です。「四球」「単打」「本塁打」それぞれの本当の「得点価値」に基づいて重み付け計算をしています。<br>
+        出塁率と同じスケール（.300くらいが標準）になるように調整されているため、直感的に分かりやすいのが特徴です。
+    </p>
+
+    <div style="background: #fff3e0; padding: 1rem; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            <li>.320：平均</li>
+            <li>.370：優秀</li>
+            <li>.400以上：リーグ最高峰</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}

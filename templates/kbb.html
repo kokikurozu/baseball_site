@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40;">K/BB</h2>
+    <small>Strikeout-to-Walk Ratio</small>
+
+    <div class="formula">
+        計算式：奪三振 ÷ 与四球
+    </div>
+
+    <p>
+        「三振を奪う力」と「四球を出さない制球力」のバランスを見る指標です。<br>
+        投手の支配力を測るのに適しており、偶然の要素が入りにくい信頼できる数値です。
+    </p>
+
+    <div style="background: #fff3e0; padding: 1rem; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            <li>3.5以上：優秀</li>
+            <li>5.0以上：エース級</li>
+            <li>7.0以上：圧倒的</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}

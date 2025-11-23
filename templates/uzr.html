@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40;">UZR</h2>
+    <small>Ultimate Zone Rating</small>
+
+    <div class="formula">
+        計算式：打球処理評価 + 併殺処理評価 + 送球評価など
+    </div>
+
+    <p>
+        同じポジションの平均的な選手と比べて、守備でどれだけ失点を防いだかを示す指標です。<br>
+        グラウンドを細かく区分けし、打球ごとの処理難易度を考慮して算出されます。
+    </p>
+
+    <div style="background: #fff3e0; padding: 1rem; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            <li>0：平均的</li>
+            <li>+5：守備範囲が広い</li>
+            <li>+15：ゴールドグラブ級</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}

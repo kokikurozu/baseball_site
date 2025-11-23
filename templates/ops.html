@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40;">OPS</h2>
+    <small>On-base Plus Slugging</small>
+
+    <div class="formula">
+        計算式：出塁率 + 長打率
+    </div>
+
+    <p>
+        打者の「得点能力」を最も手軽かつ正確に表す指標です。<br>
+        得点との相関が高く、現代野球の基本となる数値と言えます。
+    </p>
+
+    <div style="background: #fff3e0; padding: 1rem; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            <li>.800：優秀</li>
+            <li>.900：超一流</li>
+            <li>1.000：MVP級</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}

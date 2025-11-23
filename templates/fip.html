@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40;">FIP</h2>
+    <small>Fielding Independent Pitching</small>
+
+    <div class="formula">
+        計算式：(13×被本塁打 + 3×与四死球 - 2×奪三振) ÷ 投球回 + 定数
+    </div>
+
+    <p>
+        「守備の影響を排除した」投手本来の能力値です。<br>
+        被安打は運や味方の守備力に左右されるため計算に入れず、投手自身でコントロールできる「三振・四球・ホームラン」のみで評価します。<br>
+        防御率よりも、来シーズンの成績を予測するのに役立ちます。
+    </p>
+
+    <div style="background: #fff3e0; padding: 1rem; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            <li>4.00：平均的</li>
+            <li>3.50：非常に優秀</li>
+            <li>3.00以下：エース級</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}

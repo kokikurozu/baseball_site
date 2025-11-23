@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40;">WHIP</h2>
+    <small>Walks plus Hits per IP</small>
+
+    <div class="formula">
+        計算式：(被安打 + 与四球) ÷ 投球回
+    </div>
+
+    <p>
+        1イニングあたり何人のランナーを出したかを示す指標です。<br>
+        防御率よりも運の要素が少なく、投手の安定感を測るのに適しています。
+    </p>
+
+    <div style="background: #fff3e0; padding: 1rem; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            <li>1.30：平均</li>
+            <li>1.10：エース級</li>
+            <li>1.00未満：球界代表クラス</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}

@@ -8,15 +8,15 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-# 各ページへの自動振り分け機能
-# 例: /ops にアクセス -> templates/ops.html を探して表示
+# 汎用ルート：URLと同じ名前のHTMLファイルを探して表示する
+# 例: /ops にアクセス -> templates/ops.html を表示
+# 例: /blog/article1 -> templates/blog/article1.html (フォルダ分けも可能)
 @app.route('/<page_name>')
 def show_page(page_name):
     try:
-        # 指定された名前のHTMLファイルを表示する
         return render_template(f'{page_name}.html')
     except TemplateNotFound:
-        # ファイルがなければ404エラーを出す
+        # ファイルが見つからない場合は404エラー
         abort(404)
 
 if __name__ == '__main__':

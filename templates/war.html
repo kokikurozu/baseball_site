@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40;">WAR</h2>
+    <small>Wins Above Replacement</small>
+
+    <div class="formula">
+        計算式：攻撃 + 守備 + 走塁 + 投球 + ポジション補正
+    </div>
+
+    <p>
+        「控え選手（代替可能選手）と比較して、どれだけチームの勝利数を増やしたか」を表す究極の指標です。<br>
+        全ての貢献度を1つの数字で表せるため、ポジションの違う野手と投手などを比較する際によく使われます。
+    </p>
+
+    <div style="background: #fff3e0; padding: 1rem; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            <li>2.0：レギュラー定着レベル</li>
+            <li>5.0：オールスター級</li>
+            <li>8.0：MVP級</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}

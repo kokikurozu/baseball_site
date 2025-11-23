@@ -6,11 +6,20 @@
     <p>詳細を見たい指標をクリックしてください。</p>
     
     <div style="margin-top: 20px;">
-        {% for key, item in metrics.items() %}
-            <a href="{{ url_for('detail', metric_id=key) }}" class="btn">
-                {{ item.title }}
-            </a>
-        {% endfor %}
+        <h3>攻撃</h3>
+        <a href="/ops" class="btn">OPS</a>
+        <a href="/woba" class="btn">wOBA</a>
+        <a href="/iso" class="btn">ISO</a>
+        <a href="/babip" class="btn">BABIP</a>
+
+        <h3>投手</h3>
+        <a href="/whip" class="btn">WHIP</a>
+        <a href="/fip" class="btn">FIP</a>
+        <a href="/kbb" class="btn">K/BB</a>
+
+        <h3>総合・守備</h3>
+        <a href="/war" class="btn">WAR</a>
+        <a href="/uzr" class="btn">UZR</a>
     </div>
 </div>
 {% endblock %}
