@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>指標一覧 (Index)</h2>
+    <p>詳細を見たい指標をクリックしてください。</p>
+    
+    <div style="margin-top: 20px;">
+        {% for key, item in metrics.items() %}
+            <a href="{{ url_for('detail', metric_id=key) }}" class="btn">
+                {{ item.title }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40; margin-bottom: 0;">{{ data.title }}</h2>
+    <small style="color: #666; font-size: 1rem;">{{ data.subtitle }}</small>
+
+    <div class="formula">
+        計算式：{{ data.formula }}
+    </div>
+
+    <p>{{ data.description }}</p>
+
+    {% if data.evaluation %}
+    <div style="background: #fff3e0; padding: 1rem; border-radius: 4px; margin-top: 1rem;">
+        <strong>評価基準：</strong>
+        <ul>
+            {% for eval in data.evaluation %}
+                <li>{{ eval }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}" class="back-link">← 一覧に戻る</a>
+</div>
+{% endblock %}
