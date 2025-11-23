@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2 style="color: #004d40; border-bottom: 2px solid #004d40; padding-bottom: 10px;">
+        セイバーメトリクス戦術論
+    </h2>
+    <p>データを使ってどのように勝つか？現代野球の戦略を解説します。</p>
+
+    <div style="background-color: #f5f5f5; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; border: 1px solid #ddd;">
+        <h3 style="margin-top: 0; font-size: 1.1rem;">📖 目次</h3>
+        <ul style="padding-left: 20px; line-height: 1.8;">
+            <li><a href="#chapter1">1. 市場の歪みを見つける（マネー・ボールの思想）</a></li>
+            <li><a href="#chapter2">2. 「バント」は本当に有効か？</a></li>
+            <li><a href="#chapter3">3. 守備シフトの有効性</a></li>
+            <li><a href="#chapter4">4. フライボール革命</a></li>
+        </ul>
+    </div>
+    <div style="margin-bottom: 4rem;">
+        <h3 id="chapter1" style="color: #004d40; border-left: 5px solid #d81b60; padding-left: 10px;">
+            1. 市場の歪みを見つける
+        </h3>
+        <p>
+            セイバーメトリクスの本質は「他球団が過小評価している選手を安く獲得すること」にあります。<br>
+            かつては「出塁率」が軽視されていましたが、オークランド・アスレチックスはそこに目をつけ、低予算で強豪チームを作り上げました。
+        </p>
+        <p>
+            現代ではどのチームもデータを活用しているため、新たな「過小評価」を探す競争が続いています。
+        </p>
+        <a href="#" style="color: #888; text-decoration: none; font-size: 0.9rem;">▲ 目次に戻る</a>
+    </div>
+
+    <hr style="border: 0; border-top: 1px dashed #ccc; margin: 2rem 0;">
+
+    <div style="margin-bottom: 4rem;">
+        <h3 id="chapter2" style="color: #004d40; border-left: 5px solid #d81b60; padding-left: 10px;">
+            2. 「バント」は本当に有効か？
+        </h3>
+        <p>
+            伝統的な野球では「ノーアウト1塁ならバント」がセオリーでした。<br>
+            しかし、統計分析の結果、バントをして1アウトを献上するよりも、強攻したほうが「イニングの期待得点（得点期待値）」が高いケースが多いことが判明しました。
+        </p>
+        <p>
+            もちろん、1点を争う最終回など例外はありますが、序盤の無死1塁でのバントは激減しています。
+        </p>
+        <a href="#" style="color: #888; text-decoration: none; font-size: 0.9rem;">▲ 目次に戻る</a>
+    </div>
+
+    <hr style="border: 0; border-top: 1px dashed #ccc; margin: 2rem 0;">
+
+    <div style="margin-bottom: 4rem;">
+        <h3 id="chapter3" style="color: #004d40; border-left: 5px solid #d81b60; padding-left: 10px;">
+            3. 守備シフトの有効性
+        </h3>
+        <p>
+            打者の打球傾向データを分析し、野手の守備位置を極端に変える「守備シフト」。<br>
+            特に左のプルヒッター（引っ張り専門の打者）に対して、二塁ベース右側に3人の内野手を配置するシフトは劇的な効果を上げました。
+        </p>
+        <a href="#" style="color: #888; text-decoration: none; font-size: 0.9rem;">▲ 目次に戻る</a>
+    </div>
+
+    <hr style="border: 0; border-top: 1px dashed #ccc; margin: 2rem 0;">
+
+    <div style="margin-bottom: 4rem;">
+        <h3 id="chapter4" style="color: #004d40; border-left: 5px solid #d81b60; padding-left: 10px;">
+            4. フライボール革命
+        </h3>
+        <p>
+            「ゴロを打て」は昔の教えです。<br>
+            打球速度と角度のデータ解析により、「バレルゾーン」と呼ばれる角度で強く打ち上げることが最も長打になりやすいことが証明されました。
+        </p>
+        <a href="#" style="color: #888; text-decoration: none; font-size: 0.9rem;">▲ 目次に戻る</a>
+    </div>
+
+</div>
+{% endblock %}
